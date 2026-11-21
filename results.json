@@ -1,0 +1,672 @@
+{
+  "metadata": {
+    "name": "MARS/100",
+    "date": "2026-11-20",
+    "scope": "Conceptual mass and risk trade study",
+    "warning": "No validated Mars landing model, spacecraft design, launch price, or mission success rate"
+  },
+  "assumptions": {
+    "target_t": 100,
+    "module_t": 25,
+    "leo_alt_km": 300,
+    "leo_delivery_cap_t": 150,
+    "tanker_net_prop_t": 80,
+    "small_dry_fixed_t": 16,
+    "large_dry_fixed_t": 30,
+    "dry_per_payload": 0.12,
+    "isp_tmi_s": 380,
+    "isp_edl_s": 330,
+    "edl_terminal_dv_kms": 0.6,
+    "cargo_launch_musd": 90,
+    "tanker_launch_musd": 75,
+    "small_lander_musd": 80,
+    "large_lander_musd": 160,
+    "p_launch": 0.98,
+    "p_transfer": 0.96,
+    "p_edl_small": 0.92,
+    "p_edl_large": 0.85,
+    "min_reliability": 0.95,
+    "campaign_windows": 2
+  },
+  "trajectory": {
+    "transfer_days": 258.8657588951053,
+    "tmi_dv_kms": 3.589978216618719,
+    "earth_vinf_kms": 2.944689256382638,
+    "mars_vinf_kms": 2.6488952292183257,
+    "heliocentric_burn_sum_kms": 5.593584485600964,
+    "phase_angle_deg": 44.3441710655855,
+    "synodic_days": 779.9494463020508,
+    "earth_period_days": 365.2568983272364,
+    "mars_period_days": 686.9713888025649
+  },
+  "vehicles": {
+    "small": {
+      "payload_t": 25,
+      "dry_t": 19.0,
+      "landed_mass_t": 44.0,
+      "edl_prop_t": 8.962948370758035,
+      "tmi_prop_t": 85.82541554984041,
+      "total_prop_t": 94.78836392059844,
+      "required_leo_mass_t": 138.78836392059844,
+      "direct_feasible": true,
+      "refuel_feasible": true,
+      "tanker_launches": 0,
+      "required_refuel_t": 0,
+      "available_tanker_prop_t": 0,
+      "tmi_dv_kms": 3.589978216618719
+    },
+    "large": {
+      "payload_t": 100,
+      "dry_t": 42.0,
+      "landed_mass_t": 142.0,
+      "edl_prop_t": 28.925878832900935,
+      "tmi_prop_t": 276.98202291084857,
+      "total_prop_t": 305.9079017437495,
+      "required_leo_mass_t": 447.9079017437495,
+      "direct_feasible": false,
+      "refuel_feasible": true,
+      "tanker_launches": 4,
+      "required_refuel_t": 297.9079017437495,
+      "available_tanker_prop_t": 320,
+      "tmi_dv_kms": 3.589978216618719
+    }
+  },
+  "unit_success": {
+    "small": 0.9016000000000001,
+    "large": 0.7375993701887998
+  },
+  "comparison": [
+    {
+      "id": "small_4",
+      "label": "4 \u00d7 25t landers",
+      "family": "small",
+      "units": 4,
+      "module_t": 25,
+      "nominal_t": 100,
+      "launches": 4,
+      "tankers": 0,
+      "cost_musd": 680,
+      "success_probability": 0.6607780563521538,
+      "expected_useful_t": 90.16000000000001,
+      "feasible": true,
+      "windows": 1,
+      "per_vehicle_leo_t": 138.78836392059844,
+      "cost_per_expected_useful_t_musd": 7.542147293700088,
+      "cost_per_target_t_musd": 6.8,
+      "target_achieved": false,
+      "arrival_days": 258.8657588951053
+    },
+    {
+      "id": "large_1",
+      "label": "1 \u00d7 100t refueled landers",
+      "family": "large",
+      "units": 1,
+      "module_t": 100,
+      "nominal_t": 100,
+      "launches": 5,
+      "tankers": 4,
+      "cost_musd": 550,
+      "success_probability": 0.7375993701887998,
+      "expected_useful_t": 73.75993701887998,
+      "feasible": true,
+      "windows": 1,
+      "per_vehicle_leo_t": 447.9079017437495,
+      "cost_per_expected_useful_t_musd": 7.456622419013442,
+      "cost_per_target_t_musd": 5.5,
+      "target_achieved": false,
+      "arrival_days": 258.8657588951053
+    },
+    {
+      "id": "small_6",
+      "label": "6 \u00d7 25t landers",
+      "family": "small",
+      "units": 6,
+      "module_t": 25,
+      "nominal_t": 150,
+      "launches": 6,
+      "tankers": 0,
+      "cost_musd": 1020,
+      "success_probability": 0.9848405311054924,
+      "expected_useful_t": 99.58987146287103,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 138.78836392059844,
+      "cost_per_expected_useful_t_musd": 10.242005386865824,
+      "cost_per_target_t_musd": 10.2,
+      "target_achieved": true,
+      "arrival_days": 1038.815205197156
+    }
+  ],
+  "design_space": [
+    {
+      "id": "small_4",
+      "label": "4 \u00d7 25t landers",
+      "family": "small",
+      "units": 4,
+      "module_t": 25,
+      "nominal_t": 100,
+      "launches": 4,
+      "tankers": 0,
+      "cost_musd": 680,
+      "success_probability": 0.6607780563521538,
+      "expected_useful_t": 90.16000000000001,
+      "feasible": true,
+      "windows": 1,
+      "per_vehicle_leo_t": 138.78836392059844,
+      "cost_per_expected_useful_t_musd": 7.542147293700088,
+      "cost_per_target_t_musd": 6.8,
+      "target_achieved": false,
+      "arrival_days": 258.8657588951053
+    },
+    {
+      "id": "small_5",
+      "label": "5 \u00d7 25t landers",
+      "family": "small",
+      "units": 5,
+      "module_t": 25,
+      "nominal_t": 125,
+      "launches": 5,
+      "tankers": 0,
+      "cost_musd": 850,
+      "success_probability": 0.9208602993323614,
+      "expected_useful_t": 97.80606260982246,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 138.78836392059844
+    },
+    {
+      "id": "small_6",
+      "label": "6 \u00d7 25t landers",
+      "family": "small",
+      "units": 6,
+      "module_t": 25,
+      "nominal_t": 150,
+      "launches": 6,
+      "tankers": 0,
+      "cost_musd": 1020,
+      "success_probability": 0.9848405311054924,
+      "expected_useful_t": 99.58987146287103,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 138.78836392059844,
+      "cost_per_expected_useful_t_musd": 10.242005386865824,
+      "cost_per_target_t_musd": 10.2,
+      "target_achieved": true,
+      "arrival_days": 1038.815205197156
+    },
+    {
+      "id": "small_7",
+      "label": "7 \u00d7 25t landers",
+      "family": "small",
+      "units": 7,
+      "module_t": 25,
+      "nominal_t": 175,
+      "launches": 7,
+      "tankers": 0,
+      "cost_musd": 1190,
+      "success_probability": 0.9974318407184446,
+      "expected_useful_t": 99.93156589175324,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 138.78836392059844
+    },
+    {
+      "id": "small_8",
+      "label": "8 \u00d7 25t landers",
+      "family": "small",
+      "units": 8,
+      "module_t": 25,
+      "nominal_t": 200,
+      "launches": 8,
+      "tankers": 0,
+      "cost_musd": 1360,
+      "success_probability": 0.9996000642337949,
+      "expected_useful_t": 99.98945220195951,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 138.78836392059844
+    },
+    {
+      "id": "small_9",
+      "label": "9 \u00d7 25t landers",
+      "family": "small",
+      "units": 9,
+      "module_t": 25,
+      "nominal_t": 225,
+      "launches": 9,
+      "tankers": 0,
+      "cost_musd": 1530,
+      "success_probability": 0.9999414293440516,
+      "expected_useful_t": 99.99846675412975,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 138.78836392059844
+    },
+    {
+      "id": "large_1",
+      "label": "1 \u00d7 100t refueled landers",
+      "family": "large",
+      "units": 1,
+      "module_t": 100,
+      "nominal_t": 100,
+      "launches": 5,
+      "tankers": 4,
+      "cost_musd": 550,
+      "success_probability": 0.7375993701887998,
+      "expected_useful_t": 73.75993701887998,
+      "feasible": true,
+      "windows": 1,
+      "per_vehicle_leo_t": 447.9079017437495,
+      "cost_per_expected_useful_t_musd": 7.456622419013442,
+      "cost_per_target_t_musd": 5.5,
+      "target_achieved": false,
+      "arrival_days": 258.8657588951053
+    },
+    {
+      "id": "large_2",
+      "label": "2 \u00d7 100t refueled landers",
+      "family": "large",
+      "units": 2,
+      "module_t": 100,
+      "nominal_t": 200,
+      "launches": 10,
+      "tankers": 8,
+      "cost_musd": 1100,
+      "success_probability": 0.9311459094746855,
+      "expected_useful_t": 93.11459094746854,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 447.9079017437495
+    },
+    {
+      "id": "large_3",
+      "label": "3 \u00d7 100t refueled landers",
+      "family": "large",
+      "units": 3,
+      "module_t": 100,
+      "nominal_t": 300,
+      "launches": 15,
+      "tankers": 12,
+      "cost_musd": 1650,
+      "success_probability": 0.9819326432810801,
+      "expected_useful_t": 98.19326432810801,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 447.9079017437495
+    },
+    {
+      "id": "large_4",
+      "label": "4 \u00d7 100t refueled landers",
+      "family": "large",
+      "units": 4,
+      "module_t": 100,
+      "nominal_t": 400,
+      "launches": 20,
+      "tankers": 16,
+      "cost_musd": 2200,
+      "success_probability": 0.9952591142179318,
+      "expected_useful_t": 99.52591142179318,
+      "feasible": true,
+      "windows": 2,
+      "per_vehicle_leo_t": 447.9079017437495
+    }
+  ],
+  "selected_optimum": {
+    "id": "small_6",
+    "label": "6 \u00d7 25t landers",
+    "family": "small",
+    "units": 6,
+    "module_t": 25,
+    "nominal_t": 150,
+    "launches": 6,
+    "tankers": 0,
+    "cost_musd": 1020,
+    "success_probability": 0.9848405311054924,
+    "expected_useful_t": 99.58987146287103,
+    "feasible": true,
+    "windows": 2,
+    "per_vehicle_leo_t": 138.78836392059844,
+    "cost_per_expected_useful_t_musd": 10.242005386865824,
+    "cost_per_target_t_musd": 10.2,
+    "target_achieved": true,
+    "arrival_days": 1038.815205197156
+  },
+  "sensitivity": [
+    {
+      "p_edl_small": 0.75,
+      "tanker_launch_musd": 40,
+      "optimal": "large_3",
+      "optimal_musd": 1230
+    },
+    {
+      "p_edl_small": 0.75,
+      "tanker_launch_musd": 60,
+      "optimal": "small_8",
+      "optimal_musd": 1360
+    },
+    {
+      "p_edl_small": 0.75,
+      "tanker_launch_musd": 75,
+      "optimal": "small_8",
+      "optimal_musd": 1360
+    },
+    {
+      "p_edl_small": 0.75,
+      "tanker_launch_musd": 90,
+      "optimal": "small_8",
+      "optimal_musd": 1360
+    },
+    {
+      "p_edl_small": 0.75,
+      "tanker_launch_musd": 110,
+      "optimal": "small_8",
+      "optimal_musd": 1360
+    },
+    {
+      "p_edl_small": 0.75,
+      "tanker_launch_musd": 130,
+      "optimal": "small_8",
+      "optimal_musd": 1360
+    },
+    {
+      "p_edl_small": 0.75,
+      "tanker_launch_musd": 150,
+      "optimal": "small_8",
+      "optimal_musd": 1360
+    },
+    {
+      "p_edl_small": 0.8,
+      "tanker_launch_musd": 40,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.8,
+      "tanker_launch_musd": 60,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.8,
+      "tanker_launch_musd": 75,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.8,
+      "tanker_launch_musd": 90,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.8,
+      "tanker_launch_musd": 110,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.8,
+      "tanker_launch_musd": 130,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.8,
+      "tanker_launch_musd": 150,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.85,
+      "tanker_launch_musd": 40,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.85,
+      "tanker_launch_musd": 60,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.85,
+      "tanker_launch_musd": 75,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.85,
+      "tanker_launch_musd": 90,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.85,
+      "tanker_launch_musd": 110,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.85,
+      "tanker_launch_musd": 130,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.85,
+      "tanker_launch_musd": 150,
+      "optimal": "small_7",
+      "optimal_musd": 1190
+    },
+    {
+      "p_edl_small": 0.9,
+      "tanker_launch_musd": 40,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.9,
+      "tanker_launch_musd": 60,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.9,
+      "tanker_launch_musd": 75,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.9,
+      "tanker_launch_musd": 90,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.9,
+      "tanker_launch_musd": 110,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.9,
+      "tanker_launch_musd": 130,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.9,
+      "tanker_launch_musd": 150,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.92,
+      "tanker_launch_musd": 40,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.92,
+      "tanker_launch_musd": 60,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.92,
+      "tanker_launch_musd": 75,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.92,
+      "tanker_launch_musd": 90,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.92,
+      "tanker_launch_musd": 110,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.92,
+      "tanker_launch_musd": 130,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.92,
+      "tanker_launch_musd": 150,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.94,
+      "tanker_launch_musd": 40,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.94,
+      "tanker_launch_musd": 60,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.94,
+      "tanker_launch_musd": 75,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.94,
+      "tanker_launch_musd": 90,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.94,
+      "tanker_launch_musd": 110,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.94,
+      "tanker_launch_musd": 130,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.94,
+      "tanker_launch_musd": 150,
+      "optimal": "small_6",
+      "optimal_musd": 1020
+    },
+    {
+      "p_edl_small": 0.96,
+      "tanker_launch_musd": 40,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.96,
+      "tanker_launch_musd": 60,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.96,
+      "tanker_launch_musd": 75,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.96,
+      "tanker_launch_musd": 90,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.96,
+      "tanker_launch_musd": 110,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.96,
+      "tanker_launch_musd": 130,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.96,
+      "tanker_launch_musd": 150,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.98,
+      "tanker_launch_musd": 40,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.98,
+      "tanker_launch_musd": 60,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.98,
+      "tanker_launch_musd": 75,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.98,
+      "tanker_launch_musd": 90,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.98,
+      "tanker_launch_musd": 110,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.98,
+      "tanker_launch_musd": 130,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    },
+    {
+      "p_edl_small": 0.98,
+      "tanker_launch_musd": 150,
+      "optimal": "small_5",
+      "optimal_musd": 850
+    }
+  ]
+}

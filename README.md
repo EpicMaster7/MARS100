@@ -1,19 +1,19 @@
 # MARS/100
 
-**What's the best way to deliver 100 metric tons of cargo to Mars?**
+**How should we deliver 100 metric tons of cargo to Mars?**
 
-A mission architecture trade study comparing direct 25-ton landers, a refueled 100-ton lander, and a redundant fleet of 25-ton landers. The project combines orbital transfer physics, rocket-equation sizing, cost modeling, reliability, and fleet optimization.
+An interactive aerospace mission architecture study comparing direct launches, Earth-orbit refueling, and redundant cargo fleets. The model combines Hohmann transfer calculations, rocket-equation mass sizing, cost comparisons, and probabilistic fleet optimization.
 
-![Architecture comparison](architecture_comparison.png)
+![Mission architecture comparison](architecture_comparison.png)
 
-## Explore
+## Explore the project
 
-- **[Interactive dashboard](dashboard.html)**: visualize the Earth–Mars transfer and adjust mission assumptions.
-- **[Python model](model.py)**: run `python3 model.py` to reproduce the results and CSV exports.
-- **[Slides](walkthrough.pdf)** · [PowerPoint](walkthrough.pptx) · [Narration](walkthrough_script.md)
-- **[Sources and parameters](references.md)**
+- **[Interactive dashboard](dashboard.html)** — open locally in any modern browser; play the orbital transfer animation and adjust cost, propulsion, and reliability parameters.
+- **[Python model](model.py)** — run `python3 model.py` (standard library only) to reproduce the calculations and export `results.json` and CSV files.
+- **[Presentation](walkthrough.pdf)** · [Editable slides](walkthrough.pptx) · [Narration](walkthrough_script.md)
+- **[Sources](references.md)**
 
-## Results
+## Three mission architectures
 
 | Architecture | Campaign cost | Earth launches | P(deliver ≥100t) |
 |---|---:|---:|---:|
@@ -21,23 +21,41 @@ A mission architecture trade study comparing direct 25-ton landers, a refueled 1
 | One refueled 100t lander | $550M | 5 | 73.8% |
 | Six redundant 25t landers | $1.02B | 6 | 98.5% |
 
-For a 95% campaign success requirement, the six-lander fleet is the least-cost qualifying configuration among those evaluated. Without that requirement, the refueled lander has the lowest campaign cost.
+**Result:** At a 95% campaign reliability threshold, the six-lander fleet is the lowest-cost qualifying option in the modeled design space. Without that threshold, orbital refueling has the lowest estimated campaign cost.
 
-A simplified Hohmann transfer gives a **258.87-day** journey and a **3.59 km/s** trans-Mars injection burn from a 300-km circular low Earth orbit. The cost, mass, and landing-reliability parameters are editable scenario inputs.
+The model assumes independent landing outcomes, 92% small-lander entry/descent/landing success, 85% large-lander landing success, and simplified vehicle masses and launch costs. These parameters are configurable in the dashboard, and they strongly influence the recommendation.
 
-![Cost–reliability trade space](design_space.png)
+## Orbital mechanics
 
-## Run
+For a circular, coplanar Earth–Mars transfer:
 
-```bash
-python3 model.py
-python3 -m pip install numpy matplotlib python-pptx
-python3 make_figures.py
-python3 make_slides.py
-```
+| Quantity | Calculated result |
+|---|---:|
+| Transfer duration | 258.87 days |
+| Mars departure lead angle | 44.34° |
+| Earth-to-Mars launch opportunity interval | ~780 days |
+| Trans-Mars injection from 300 km LEO | 3.590 km/s |
 
-The dashboard is standalone HTML and runs locally without a server.
+The mass model applies the Tsiolkovsky rocket equation to trans-Mars injection and a modeled terminal descent maneuver. The fleet model uses exact binomial probabilities to determine the minimum-cost configuration meeting the cargo and success targets.
 
-## References
+## What I explored
 
-See [references.md](references.md) for NASA/JPL sources and the model inputs.
+The most interesting trade-off was **cost versus reliability**. Orbital refueling wins on campaign cost, but modularity and extra landers improve the probability of completing the full cargo delivery objective. Increasing landing difficulty or changing tanker efficiency can shift the preferred mission architecture.
+
+![Cost versus reliability design space](design_space.png)
+
+**Model boundary:** Costs, spacecraft specifications, and per-flight success rates are scenario inputs; orbital calculations use established two-body mechanics. See [references](references.md) for NASA/JPL sources and input details.
+
+## Project files
+
+| File | Contents |
+|---|---|
+| `dashboard.html` | Interactive browser-based trade study |
+| `model.py` | Physics, fleet probability, optimization, and CSV exports |
+| `make_figures.py` | Generate charts (`matplotlib`, `numpy`) |
+| `make_slides.py` | Generate presentation (`python-pptx`) |
+| `results.json` and `*.csv` | Calculated results and sensitivity study |
+| `*.png` | Figures for reporting |
+| `walkthrough.pdf`, `walkthrough.pptx` | Presentation files |
+| `walkthrough_script.md` | 3–5 minute explanation |
+| `references.md` | Sources and parameters |

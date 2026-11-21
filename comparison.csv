@@ -1,0 +1,4 @@
+id,label,units,nominal_t,launches,tankers,cost_musd,success_probability,expected_useful_t,cost_per_expected_useful_t_musd,target_achieved,windows,arrival_days
+small_4,4 × 25t landers,4,100,4,0,680,0.6607780563521538,90.16000000000001,7.542147293700088,False,1,258.8657588951053
+large_1,1 × 100t refueled landers,1,100,5,4,550,0.7375993701887998,73.75993701887998,7.456622419013442,False,1,258.8657588951053
+small_6,6 × 25t landers,6,150,6,0,1020,0.9848405311054924,99.58987146287103,10.242005386865824,True,2,1038.815205197156
